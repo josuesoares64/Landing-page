@@ -1,0 +1,659 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: rgba(246, 245, 236, 1);
+}
+/* Reset e estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 0;
+  z-index: 1000;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+header nav a {
+  color: rgba(83, 57, 25, 1);
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+header nav a:hover {
+  color: #000;
+}
+
+/* Menu Hamburguer - Escondido por padrão */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1001;
+}
+
+.menu-toggle .bar {
+  display: block;
+  width: 25px;
+  height: 2px;
+  margin: 5px 0;
+  background-color: rgba(83, 57, 25, 1);
+  transition: all 0.3s ease;
+}
+
+/* Estilos para mobile */
+@media (max-width: 768px) {
+  nav {
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-list {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 70px);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 40px;
+    gap: 30px;
+    background-color: white;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .nav-list.active {
+    transform: translateX(0);
+  }
+
+  /* Animação do ícone hamburguer para X */
+  .menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}
+
+
+.section-start {
+  background-image: url("img/imagem.png"); /* Substitua pelo caminho correto */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Logo responsiva */
+.logo {
+  max-width: 160px;
+  width: 100%;
+  height: auto;
+}
+
+/* Parágrafo */
+.scroll-prompt {
+  margin-top: 12px;
+  font-size: 16px;
+  color: white;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 600px) {
+  .logo {
+    max-width: 120px;
+  }
+
+  .scroll-prompt {
+    font-size: 14px;
+  }
+}
+
+.presentation-section {
+  padding: 1rem 2rem; /* Espaçamento interno */
+  font-family: "Times New Roman", serif; /* Fonte do texto principal */
+}
+
+/* Título principal estilizado */
+.header-container {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 40vh; /* Para centralizar o conteúdo verticalmente na página */
+  text-align: center;
+  padding: 10px;
+}
+
+h1 {
+  font-family: "Oriental Village", cursive;
+  font-weight: 400;
+  font-size: 158.86px;
+  line-height: 1; /* Ajustado para melhor leitura, já que 0% não é prático */
+  margin: 0;
+}
+
+.subheading {
+  font-size: 1.2rem;
+  font-family: "My Soul", cursive;
+  line-height: 1.6;
+  margin-top: 20px;
+  max-width: 600px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 80px; /* Reduz o tamanho da fonte em telas menores */
+  }
+
+  .subheading {
+    font-size: 1rem;
+  }
+}
+
+.header-container h1 {
+  font-family: "Your-Handwritten-Font", cursive; /* Use uma fonte manuscrita, como na imagem */
+  font-size: 3rem;
+  font-weight: normal;
+  color: #a48c77; /* Cor marrom */
+  line-height: 1.2;
+}
+
+.header-container p {
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* Estrutura principal com Flexbox */
+.main-content-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Alinha o conteúdo ao topo */
+  position: relative; /* Para poder posicionar as imagens de forma absoluta dentro dele */
+  max-width: 1200px; /* Largura máxima para centralizar o conteúdo */
+  margin: 0 auto;
+}
+
+.pillars {
+  padding: 4rem;
+  height: 464px;
+}
+
+.pillar-img {
+  text-align: center;
+  height: 157px;
+  width: 488px auto;
+  margin-bottom: 25px;
+}
+
+.pillar {
+  height: 145px;
+  margin: -2px;
+}
+
+.pillars-text {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: left;  
+  margin-top: -10px; 
+  gap: 45px;
+  font-size: 1.1rem;
+  & h3{
+    color: rgba(87, 58, 27, 0.87);
+  }
+}
+
+.pillar-h3 {
+  font-size: 1.2rem;
+  margin-top: -200px;
+}
+
+.pillar-text {
+  display: flex;               
+  flex-direction: column;      
+  justify-content: center;     
+  align-items: center; 
+  text-align: left;        
+  padding: 5px;         
+  width: 350px;
+  gap: 40px;
+}
+
+/* Fundo geral */
+.selected-works {
+  background-color: #f9f5ed; /* tom idêntico ao da imagem */
+  padding: 70px 60px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Título principal */
+.selected-works .section-header h2 {
+  font-family: 'Dancing Script', cursive; /* estilo manuscrito */
+  font-size: 2.8rem;
+  font-weight: 400;
+  text-align: center;
+  color: #6e5847;
+  margin-bottom: 10px;
+}
+
+/* Subtítulo */
+.selected-works .section-header p {
+  font-size: 0.9rem;
+  letter-spacing: 3px;
+  color: #6e5847;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+/* Container das categorias */
+.categories {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Cada categoria */
+.category {
+  flex: 1;
+  text-align: left;
+  max-width: 240px;
+}
+
+/* Título da categoria */
+.category h3 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #6e5847;
+  margin-bottom: 5px;
+}
+
+/* Texto da categoria */
+.category p {
+  font-size: 0.7rem;
+  margin-top: 35px;
+  line-height: 1.5;
+  color: #6e5847;
+  margin-bottom: 15px;
+}
+
+/* Imagens */
+.category img {
+  width: 100%;
+  display: block;
+  height: 300px;
+}
+
+
+/* Container do texto */
+.text-container {
+  max-width: 350px;
+}
+
+.text-container h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  color: #333;
+}
+
+.text-container .description {
+  line-height: 1.6;
+  margin-top: 1rem;
+  color: #666;
+}
+
+/* Galeria de imagens */
+.image-gallery {
+  position: relative;
+  width: 60%; /* Ajuste a largura do container das imagens */
+  min-height: 600px; /* Altura mínima para as imagens não ficarem "espremidas" */
+}
+
+.image-gallery img {
+  position: absolute;
+  transition: all 0.3s ease-in-out; /* Adiciona uma transição suave */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 200px; /* Largura padrão das imagens */
+}
+
+/* Posicionamento específico de cada imagem */
+.image-gallery .img-1 {
+  top: 3%;
+  left: 6%;
+  height: 180px;
+  width: 350px; /* Mover para a esquerda para criar o efeito */
+}
+
+.image-gallery .img-2 {
+  top: 0;
+  right: 0;
+  width: 850px; /* Maior que as outras */
+  z-index: 2; /* Para ficar por cima das outras */
+}
+
+.image-gallery .img-3 {
+  bottom: 40%;
+  right: 38%;
+  height: 200px;
+  width: 980px;
+}
+
+.image-gallery .img-4 {
+  bottom: 25%;
+  left: -5%;
+  width: 150px;
+}
+
+.image-gallery .img-5 {
+  top: 50%;
+  left: -60%;
+  width: 650px;
+}
+
+/* No CSS original, você pode também querer adicionar um efeito ao passar o mouse */
+.image-gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.process-title {
+  font-family: "Great Vibes", cursive;
+  font-size: 2.8rem; /* Reduzido de 3.5rem */
+  font-weight: normal;
+  margin-bottom: 0;
+}
+.process-subtitle {
+  letter-spacing: 0.15em; /* Levemente reduzido */
+  font-size: 0.8rem; /* Reduzido de 0.9rem */
+  margin-top: 0;
+  margin-bottom: 4rem;
+}
+
+.process-graphic {
+  position: relative;
+  height: auto;
+  min-height: 550px; /* Altura ajustada para o novo layout */
+}
+
+.process-path-svg {
+  position: absolute;
+  left: 40%;
+  transform: translateX(10%);
+  width: 20px;
+  height: 10%;
+}
+
+.desktop-path {
+  display: none;
+}
+.mobile-path {
+  display: block;
+}
+
+/* CORREÇÃO: Usando position: absolute para garantir o alinhamento perfeito */
+.step {
+  position: absolute; /* Mudado de 'relative' para 'absolute' */
+  width: 80%; /* Ocupa 80% da largura para evitar que textos longos quebrem a linha */
+  left: 50%;
+  font-size: 0.85rem; /* Tamanho da fonte do passo reduzido */
+  /* Este transform centra o elemento horizontalmente e verticalmente em seu ponto 'top' */
+  transform: translate(-50%, -50%);
+}
+
+/* CORREÇÃO: Posições 'top' agora correspondem EXATAMENTE às coordenadas 'cy' dos círculos no SVG mobile */
+.step-1 {
+  top: 50px;
+}
+.step-2 {
+  top: 150px;
+}
+.step-3 {
+  top: 250px;
+}
+.step-4 {
+  top: 350px;
+}
+.step-5 {
+  top: 450px;
+}
+
+/* --- ESTILOS PARA TELAS GRANDES (TABLET/DESKTOP) --- */
+@media (min-width: 768px) {
+  /* Restaura os tamanhos de fonte para telas maiores */
+  .process-title {
+    font-size: 3.5rem;
+  }
+  .process-subtitle {
+    font-size: 0.9rem;
+    letter-spacing: 0.2em;
+  }
+
+  .process-graphic {
+    height: 400px;
+    min-height: auto; /* Remove a altura mínima */
+  }
+
+  .process-path-svg {
+    left: 0;
+    transform: none;
+    width: 100%;
+    height: 100%;
+  }
+
+  .mobile-path {
+    display: none;
+  }
+  .desktop-path {
+    display: block;
+  }
+
+  .step {
+    /* Restaura as propriedades para o layout desktop */
+    width: auto;
+    font-size: 1.3rem;
+    /* O transform aqui é diferente, apenas para alinhamento horizontal */
+    transform: none;
+  }
+
+  /* Restaura as posições específicas para o layout de desktop */
+  .step-1 {
+    top: 45px;
+    left: 105px;
+    transform: translateX(-100%);
+  }
+  .step-2 {
+    top: 78px;
+    left: auto;
+    right: 130px;
+    transform: translateX(100%);
+  }
+  .step-3 {
+    top: 155px;
+    left: 90px;
+    transform: translateX(-100%);
+  }
+  .step-4 {
+    top: 230px;
+    left: auto;
+    right: 130px;
+    transform: translateX(100%);
+  }
+  .step-5 {
+    top: 270px;
+    left: 110px;
+    transform: translateX(-100%);
+  }
+}
+
+.process-steps {
+  width: 100%;
+  padding: 50px;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  text-align: left;
+}
+
+.process-container {
+  padding: 40px;
+}
+
+.process-container {
+  padding: 0 20px; /* 20px de espaçamento nas laterais */
+  box-sizing: border-box; /* garante que o padding não quebre o layout */
+}
+
+@media (min-width: 769px) {
+  .process-container {
+    padding: 0 60px; /* mais espaçamento em telas grandes */
+  }
+}
+
+.process-card {
+  width: 197px;
+  height: 148px;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+/* ESTILO PARA TELAS PEQUENAS (mobile) */
+@media (max-width: 1024px) {
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais */
+    gap: 30px;
+    width: 100%;
+    max-width: 900px; /* controla o tamanho máximo do grid */
+    margin: 0 auto; /* centraliza o grid todo */
+  }
+
+  .process-step__content {
+    margin-left: 20px;
+  }
+
+  .process-card h3 {
+    margin-left: 20px;
+  }
+
+  .step-1 {
+    top: 36px;
+    left: 95px;
+    transform: translateX(-100%);
+  }
+  .step-3 {
+    top: 150px;
+    left: 97px;
+    transform: translateX(-100%);
+  }
+  .step-5 {
+    top: 260px;
+    left: 110px;
+    transform: translateX(-100%);
+  }
+
+  /* Cards ocupando 1 coluna cada */
+  .process-card {
+    width: 100%;
+    height: auto;
+  }
+
+  /* POSICIONAMENTO ESPECÍFICO */
+  .process-card:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .process-card:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .process-card:nth-child(3) {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  /* Centraliza os dois últimos cards */
+  .process-card:nth-child(4) {
+    grid-column: 2;
+    grid-row: 2;
+    transform: translateX(-50%); /* ajuste fino de posição */
+  }
+  .process-card:nth-child(5) {
+    grid-column: 2;
+    grid-row: 2;
+    transform: translateX(50%);
+  }
+}
+
+/* Ajuste para telas muito pequenas */
+@media (max-width: 600px) {
+  .process-steps {
+    grid-template-columns: 1fr;
+  }
+  .process-card {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+    transform: none !important;
+  }
+}
