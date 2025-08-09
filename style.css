@@ -1,17 +1,18 @@
-body,
-html {
+/* Global Styles */
+body, html {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   background-color: rgba(246, 245, 236, 1);
 }
-/* Reset e estilos base */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Header Styles */
 header {
   position: fixed;
   top: 0;
@@ -56,7 +57,6 @@ header nav a:hover {
   color: #000;
 }
 
-/* Menu Hamburguer - Escondido por padrão */
 .menu-toggle {
   display: none;
   cursor: pointer;
@@ -76,7 +76,7 @@ header nav a:hover {
   transition: all 0.3s ease;
 }
 
-/* Estilos para mobile */
+/* Header Media Queries */
 @media (max-width: 768px) {
   nav {
     justify-content: space-between;
@@ -107,7 +107,6 @@ header nav a:hover {
     transform: translateX(0);
   }
 
-  /* Animação do ícone hamburguer para X */
   .menu-toggle.active .bar:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
   }
@@ -119,15 +118,20 @@ header nav a:hover {
   .menu-toggle.active .bar:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
   }
+
+  #desktop-path {
+    transform: scale(0.8);
+    transform-origin: center;
+  }
+
 }
 
-
+/* Section-start Styles */
 .section-start {
-  background-image: url("img/imagem.png"); /* Substitua pelo caminho correto */
+  background-image: url("img/imagem.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
   width: 100%;
   height: 100vh;
   display: flex;
@@ -137,21 +141,19 @@ header nav a:hover {
   text-align: center;
 }
 
-/* Logo responsiva */
 .logo {
   max-width: 160px;
   width: 100%;
   height: auto;
 }
 
-/* Parágrafo */
 .scroll-prompt {
   margin-top: 12px;
   font-size: 16px;
   color: white;
 }
 
-/* Responsividade para telas menores */
+/* Section-start Media Queries */
 @media (max-width: 600px) {
   .logo {
     max-width: 120px;
@@ -162,15 +164,10 @@ header nav a:hover {
   }
 }
 
+/* Presentation-section Styles */
 .presentation-section {
-  padding: 1rem 2rem; /* Espaçamento interno */
-  font-family: "Times New Roman", serif; /* Fonte do texto principal */
-}
-
-/* Título principal estilizado */
-.header-container {
-  text-align: center;
-  margin-bottom: 2rem;
+  padding: 1rem 2rem;
+  font-family: "Times New Roman", serif;
 }
 
 .header-container {
@@ -178,7 +175,7 @@ header nav a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 40vh; /* Para centralizar o conteúdo verticalmente na página */
+  height: 40vh;
   text-align: center;
   padding: 10px;
 }
@@ -187,7 +184,7 @@ h1 {
   font-family: "Oriental Village", cursive;
   font-weight: 400;
   font-size: 158.86px;
-  line-height: 1; /* Ajustado para melhor leitura, já que 0% não é prático */
+  line-height: 1;
   margin: 0;
 }
 
@@ -199,22 +196,11 @@ h1 {
   max-width: 600px;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 80px; /* Reduz o tamanho da fonte em telas menores */
-  }
-
-  .subheading {
-    font-size: 1rem;
-  }
-}
-
 .header-container h1 {
-  font-family: "Your-Handwritten-Font", cursive; /* Use uma fonte manuscrita, como na imagem */
+  font-family: "Your-Handwritten-Font", cursive;
   font-size: 3rem;
   font-weight: normal;
-  color: #a48c77; /* Cor marrom */
+  color: #a48c77;
   line-height: 1.2;
 }
 
@@ -224,129 +210,15 @@ h1 {
   line-height: 1.5;
 }
 
-/* Estrutura principal com Flexbox */
 .main-content-container {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start; /* Alinha o conteúdo ao topo */
-  position: relative; /* Para poder posicionar as imagens de forma absoluta dentro dele */
-  max-width: 1200px; /* Largura máxima para centralizar o conteúdo */
+  align-items: flex-start;
+  position: relative;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-.pillars {
-  padding: 4rem;
-  height: 464px;
-}
-
-.pillar-img {
-  text-align: center;
-  height: 157px;
-  width: 488px auto;
-  margin-bottom: 25px;
-}
-
-.pillar {
-  height: 145px;
-  margin: -2px;
-}
-
-.pillars-text {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  text-align: left;  
-  margin-top: -10px; 
-  gap: 45px;
-  font-size: 1.1rem;
-  & h3{
-    color: rgba(87, 58, 27, 0.87);
-  }
-}
-
-.pillar-h3 {
-  font-size: 1.2rem;
-  margin-top: -200px;
-}
-
-.pillar-text {
-  display: flex;               
-  flex-direction: column;      
-  justify-content: center;     
-  align-items: center; 
-  text-align: left;        
-  padding: 5px;         
-  width: 350px;
-  gap: 40px;
-}
-
-/* Fundo geral */
-.selected-works {
-  background-color: #f9f5ed; /* tom idêntico ao da imagem */
-  padding: 70px 60px;
-  font-family: "Helvetica Neue", Arial, sans-serif;
-}
-
-/* Título principal */
-.selected-works .section-header h2 {
-  font-family: 'Dancing Script', cursive; /* estilo manuscrito */
-  font-size: 2.8rem;
-  font-weight: 400;
-  text-align: center;
-  color: #6e5847;
-  margin-bottom: 10px;
-}
-
-/* Subtítulo */
-.selected-works .section-header p {
-  font-size: 0.9rem;
-  letter-spacing: 3px;
-  color: #6e5847;
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-/* Container das categorias */
-.categories {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-/* Cada categoria */
-.category {
-  flex: 1;
-  text-align: left;
-  max-width: 240px;
-}
-
-/* Título da categoria */
-.category h3 {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  color: #6e5847;
-  margin-bottom: 5px;
-}
-
-/* Texto da categoria */
-.category p {
-  font-size: 0.7rem;
-  margin-top: 35px;
-  line-height: 1.5;
-  color: #6e5847;
-  margin-bottom: 15px;
-}
-
-/* Imagens */
-.category img {
-  width: 100%;
-  display: block;
-  height: 300px;
-}
-
-
-/* Container do texto */
 .text-container {
   max-width: 350px;
 }
@@ -364,33 +236,31 @@ h1 {
   color: #666;
 }
 
-/* Galeria de imagens */
 .image-gallery {
   position: relative;
-  width: 60%; /* Ajuste a largura do container das imagens */
-  min-height: 600px; /* Altura mínima para as imagens não ficarem "espremidas" */
+  width: 60%;
+  min-height: 600px;
 }
 
 .image-gallery img {
   position: absolute;
-  transition: all 0.3s ease-in-out; /* Adiciona uma transição suave */
+  transition: all 0.3s ease-in-out;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 200px; /* Largura padrão das imagens */
+  max-width: 200px;
 }
 
-/* Posicionamento específico de cada imagem */
 .image-gallery .img-1 {
   top: 3%;
   left: 6%;
   height: 180px;
-  width: 350px; /* Mover para a esquerda para criar o efeito */
+  width: 350px;
 }
 
 .image-gallery .img-2 {
   top: 0;
   right: 0;
-  width: 850px; /* Maior que as outras */
-  z-index: 2; /* Para ficar por cima das outras */
+  width: 850px;
+  z-index: 2;
 }
 
 .image-gallery .img-3 {
@@ -412,21 +282,143 @@ h1 {
   width: 650px;
 }
 
-/* No CSS original, você pode também querer adicionar um efeito ao passar o mouse */
 .image-gallery img:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+/* Presentation-section Media Queries */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 80px;
+  }
+
+  .subheading {
+    font-size: 1rem;
+  }
+}
+
+/* Pillars Styles */
+.pillars {
+  padding: 4rem;
+  height: 464px;
+}
+
+.pillar-img {
+  text-align: center;
+  height: 157px;
+  width: 488px auto;
+  margin-bottom: 25px;
+}
+
+.pillar {
+  height: 145px;
+  margin: -2px;
+}
+
+.pillars-text {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: left;
+  margin-top: -10px;
+  gap: 45px;
+  font-size: 1.1rem;
+}
+
+.pillars-text h3 {
+  color: rgba(87, 58, 27, 0.87);
+}
+
+.pillar-h3 {
+  font-size: 1.2rem;
+  margin-top: -200px;
+}
+
+.pillar-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  padding: 5px;
+  width: 350px;
+  gap: 40px;
+}
+
+/* Selected-works Styles */
+.selected-works {
+  background-color: #f9f5ed;
+  padding: 70px 60px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.selected-works .section-header h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.8rem;
+  font-weight: 400;
+  text-align: center;
+  color: #6e5847;
+  margin-bottom: 10px;
+}
+
+.selected-works .section-header p {
+  font-size: 0.9rem;
+  letter-spacing: 3px;
+  color: #6e5847;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.categories {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.category {
+  flex: 1;
+  text-align: left;
+  max-width: 240px;
+}
+
+.category h3 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #6e5847;
+  margin-bottom: 5px;
+}
+
+.category p {
+  font-size: 0.7rem;
+  margin-top: 35px;
+  line-height: 1.5;
+  color: #6e5847;
+  margin-bottom: 15px;
+}
+
+.category img {
+  width: 100%;
+  display: block;
+  height: 300px;
+}
+
+/* Process-container Styles */
+.process-container {
+  padding: 40px;
+}
+
 .process-title {
   font-family: "Great Vibes", cursive;
-  font-size: 2.8rem; /* Reduzido de 3.5rem */
+  font-size: 2.8rem;
   font-weight: normal;
   margin-bottom: 0;
 }
+
 .process-subtitle {
-  letter-spacing: 0.15em; /* Levemente reduzido */
-  font-size: 0.8rem; /* Reduzido de 0.9rem */
+  letter-spacing: 0.15em;
+  font-size: 0.8rem;
   margin-top: 0;
   margin-bottom: 4rem;
 }
@@ -434,7 +426,7 @@ h1 {
 .process-graphic {
   position: relative;
   height: auto;
-  min-height: 550px; /* Altura ajustada para o novo layout */
+  min-height: 550px;
 }
 
 .process-path-svg {
@@ -448,43 +440,61 @@ h1 {
 .desktop-path {
   display: none;
 }
+
 .mobile-path {
   display: block;
 }
 
-/* CORREÇÃO: Usando position: absolute para garantir o alinhamento perfeito */
 .step {
-  position: absolute; /* Mudado de 'relative' para 'absolute' */
-  width: 80%; /* Ocupa 80% da largura para evitar que textos longos quebrem a linha */
+  position: absolute;
+  width: 80%;
   left: 50%;
-  font-size: 0.85rem; /* Tamanho da fonte do passo reduzido */
-  /* Este transform centra o elemento horizontalmente e verticalmente em seu ponto 'top' */
+  font-size: 0.85rem;
   transform: translate(-50%, -50%);
 }
 
-/* CORREÇÃO: Posições 'top' agora correspondem EXATAMENTE às coordenadas 'cy' dos círculos no SVG mobile */
 .step-1 {
   top: 50px;
 }
+
 .step-2 {
   top: 150px;
 }
+
 .step-3 {
   top: 250px;
 }
+
 .step-4 {
   top: 350px;
 }
+
 .step-5 {
   top: 450px;
 }
 
-/* --- ESTILOS PARA TELAS GRANDES (TABLET/DESKTOP) --- */
+.process-steps {
+  width: 100%;
+  padding: 50px;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  text-align: left;
+}
+
+.process-card {
+  width: 197px;
+  height: 148px;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+/* Process-container Media Queries */
 @media (min-width: 768px) {
-  /* Restaura os tamanhos de fonte para telas maiores */
   .process-title {
     font-size: 3.5rem;
   }
+  
   .process-subtitle {
     font-size: 0.9rem;
     letter-spacing: 0.2em;
@@ -492,7 +502,7 @@ h1 {
 
   .process-graphic {
     height: 400px;
-    min-height: auto; /* Remove a altura mínima */
+    min-height: auto;
   }
 
   .process-path-svg {
@@ -505,88 +515,80 @@ h1 {
   .mobile-path {
     display: none;
   }
+  
   .desktop-path {
     display: block;
   }
 
   .step {
-    /* Restaura as propriedades para o layout desktop */
     width: auto;
     font-size: 1.3rem;
-    /* O transform aqui é diferente, apenas para alinhamento horizontal */
     transform: none;
   }
 
-  /* Restaura as posições específicas para o layout de desktop */
   .step-1 {
     top: 45px;
     left: 105px;
     transform: translateX(-100%);
   }
+  
   .step-2 {
     top: 78px;
     left: auto;
     right: 130px;
     transform: translateX(100%);
   }
+  
   .step-3 {
     top: 155px;
-    left: 90px;
+    left: 95px;
     transform: translateX(-100%);
   }
+  
   .step-4 {
     top: 230px;
     left: auto;
     right: 130px;
     transform: translateX(100%);
   }
+  
   .step-5 {
     top: 270px;
     left: 110px;
     transform: translateX(-100%);
   }
-}
 
-.process-steps {
-  width: 100%;
-  padding: 50px;
-  display: flex;
-  flex-direction: row;
-  gap: 50px;
-  text-align: left;
-}
-
-.process-container {
-  padding: 40px;
-}
-
-.process-container {
-  padding: 0 20px; /* 20px de espaçamento nas laterais */
-  box-sizing: border-box; /* garante que o padding não quebre o layout */
+  .desktop-path circle:nth-of-type(1) {
+    transform: translate( 63px, 30px);
+  }
+  .desktop-path circle:nth-of-type(2) {
+    transform: translate(-54px, 20px);
+  }
+  .desktop-path circle:nth-of-type(3) {
+    transform: translate( 68px, 5px);
+  }
+  .desktop-path circle:nth-of-type(4) {
+    transform: translate( -55px, -10px);
+  }
+  .desktop-path circle:nth-of-type(5) {
+    transform: translate( 55px, -15px);
+  }
 }
 
 @media (min-width: 769px) {
   .process-container {
-    padding: 0 60px; /* mais espaçamento em telas grandes */
+    padding: 0 60px;
   }
 }
 
-.process-card {
-  width: 197px;
-  height: 148px;
-  margin-top: 20px;
-  margin-left: 30px;
-}
-
-/* ESTILO PARA TELAS PEQUENAS (mobile) */
 @media (max-width: 1024px) {
   .process-steps {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais */
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     width: 100%;
-    max-width: 900px; /* controla o tamanho máximo do grid */
-    margin: 0 auto; /* centraliza o grid todo */
+    max-width: 900px;
+    margin: 0 auto;
   }
 
   .process-step__content {
@@ -598,47 +600,63 @@ h1 {
   }
 
   .step-1 {
-    top: 36px;
+    top: 80px;
     left: 95px;
     transform: translateX(-100%);
   }
+
+  .step-2 {
+    top: 110px;
+    left: auto;
+    right: 149px;
+    transform: translateX(100%);
+  }
+  
   .step-3 {
-    top: 150px;
+    top: 160px;
     left: 97px;
     transform: translateX(-100%);
   }
+  
+  .step-4 {
+    top: 210px;
+    left: auto;
+    right: 149px;
+    transform: translateX(100%);
+  }
+
   .step-5 {
-    top: 260px;
+    top: 240px;
     left: 110px;
     transform: translateX(-100%);
   }
 
-  /* Cards ocupando 1 coluna cada */
   .process-card {
     width: 100%;
     height: auto;
   }
 
-  /* POSICIONAMENTO ESPECÍFICO */
   .process-card:nth-child(1) {
     grid-column: 1;
     grid-row: 1;
   }
+  
   .process-card:nth-child(2) {
     grid-column: 2;
     grid-row: 1;
   }
+  
   .process-card:nth-child(3) {
     grid-column: 3;
     grid-row: 1;
   }
 
-  /* Centraliza os dois últimos cards */
   .process-card:nth-child(4) {
     grid-column: 2;
     grid-row: 2;
-    transform: translateX(-50%); /* ajuste fino de posição */
+    transform: translateX(-50%);
   }
+  
   .process-card:nth-child(5) {
     grid-column: 2;
     grid-row: 2;
@@ -646,11 +664,33 @@ h1 {
   }
 }
 
-/* Ajuste para telas muito pequenas */
+@media (min-width: 1440px) {
+  .step-1 {
+    left: 300px;
+  }
+  
+  .step-2 {
+    right: 360px;
+  }
+  
+  .step-3 {
+    left: 300px;
+  }
+  
+  .step-4 {
+    right: 360px;
+  }
+  
+  .step-5 {
+    left: 300px;
+  }
+}
+
 @media (max-width: 600px) {
   .process-steps {
     grid-template-columns: 1fr;
   }
+  
   .process-card {
     grid-column: 1 !important;
     grid-row: auto !important;

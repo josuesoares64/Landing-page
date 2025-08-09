@@ -1,5 +1,10 @@
 const menuToggle = document.getElementById('mobile-menu');
 const navList = document.getElementById('nav-list');
+  AOS.init({
+    duration: 1000, // duração da animação em milissegundos
+    once: true // anima só uma vez ao aparecer
+  });
+
 
 menuToggle.addEventListener('click', () => {
   menuToggle.classList.toggle('active');

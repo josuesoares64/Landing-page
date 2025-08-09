@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=My+Soul&family=Quicksand:wght@300..700&display=swap"
       rel="stylesheet"
@@ -36,7 +37,11 @@
       </section>
       <section class="presentation-section">
         <div class="header-container">
-          <h1>one agency<br /><span>every creative need</span></h1>
+          <h1 data-aos="fade-up">
+  one agency<br />
+  <span data-aos="fade-up" data-aos-delay="200">every creative need</span>
+</h1>
+
           <p class="subheading">
             From art direction and photography to brand<br />curation and
             spatial installations, we handle it all<br />seamlessly under one
@@ -161,126 +166,54 @@
           FROM INVISIBLE TENSION TO IMPACTFUL CLARITY.
         </p>
 
-        <div class="process-graphic">
-          <svg
-            class="process-path-svg"
-            viewBox="0 0 800 400"
-            preserveAspectRatio="xMidYMid meet"
-          >
-            <path
-              id="desktop-path"
-              class="desktop-path"
-              d="M 80 50 H 650 C 680 50, 680 125, 630 125 L 90 125 C 60 140, 60 180, 80 200 H 650 C 670 200, 670 275, 650 275 L 80 275"
-              ;
-              fill="none"
-              stroke="#6b5e51"
-              stroke-width="2.5"
-            />
-            <g class="desktop-path">
-              <circle
-                cx="80"
-                cy="50"
-                r="8"
-                fill="#f4f1ec"
-                stroke="#6b5e51"
-                stroke-width="2.5"
-              />
-              <circle
-                cx="669"
-                cy="87.5"
-                r="8"
-                fill="#f4f1ec"
-                stroke="#6b5e51"
-                stroke-width="2.5"
-              />
-              <!-- Ponto médio da primeira curva -->
-              <circle
-                cx="65"
-                cy="162.5"
-                r="8"
-                fill="#f4f1ec"
-                stroke="#6b5e51"
-                stroke-width="2.5"
-              />
-              <!-- Ponto médio da segunda curva -->
-              <circle
-                cx="666"
-                cy="237.5"
-                r="8"
-                fill="#f4f1ec"
-                stroke="#6b5e51"
-                stroke-width="2.5"
-              />
-              <!-- Ponto médio da terceira curva -->
-              <circle
-                cx="80"
-                cy="275"
-                r="8"
-                fill="#f4f1ec"
-                stroke="#6b5e51"
-                stroke-width="2.5"
-              />
-            </g>
+<div class="process-graphic">
+  <svg
+    class="process-path-svg"
+    viewBox="0 0 800 400"
+    preserveAspectRatio="xMidYMid meet"
+  >
+    <!-- Caminho desktop -->
+    <path
+      id="desktop-path"
+      class="desktop-path"
+      d="M 80 50 H 650 C 680 50, 680 125, 630 125 L 90 125 C 60 140, 60 180, 80 200 H 650 C 670 200, 670 275, 650 275 L 80 275"
+      fill="none"
+      stroke="#6b5e51"
+      stroke-width="2.5"
+    />
+    <g class="desktop-path">
+      <circle cx="73" cy="49" r="8" fill="#f4f1ec" stroke="#6b5e51" stroke-width="2.5"/>
+      <circle cx="668" cy="90" r="8" fill="#f4f1ec" stroke="#6b5e51" stroke-width="2.5"/>
+      <circle cx="65" cy="162.5" r="8" fill="#f4f1ec" stroke="#6b5e51" stroke-width="2.5"/>
+      <circle cx="665" cy="240" r="8" fill="#f4f1ec" stroke="#6b5e51" stroke-width="2.5"/>
+      <circle cx="80" cy="275" r="8" fill="#f4f1ec" stroke="#6b5e51" stroke-width="2.5"/>
+    </g>
 
-            <path
-              id="mobile-path"
-              class="mobile-path"
-              d="M 50 20 V 580"
-              fill="none"
-              stroke="#6b5e51"
-              stroke-width="2.5"
-            />
-            <g class="mobile-path">
-              <circle
-                cx="50"
-                cy="50"
-                r="8"
-                fill="#f4f1ec"
-                stroke="#6b5e51"
-                stroke-width="2.5"
-              />
-              <circle
-                cx="50"
-                cy="150"
-                r="8"
-                fill="#f4f1ec"
-                stroke="#6b5e51"
-                stroke-width="2.5"
-              />
-              <circle
-                cx="50"
-                cy="250"
-                r="8"
-                fill="#f4f1ec"
-                stroke="#6b5e51"
-                stroke-width="2.5"
-              />
-              <circle
-                cx="50"
-                cy="350"
-                r="8"
-                fill="#f4f1ec"
-                stroke="#6b5e51"
-                stroke-width="2.5"
-              />
-              <circle
-                cx="50"
-                cy="450"
-                r="9"
-                fill="#f4f1ec"
-                stroke="#6b5e51"
-                stroke-width="2.5"
-              />
-            </g>
-          </svg>
+    <!-- Caminho mobile -->
+    <path
+      id="mobile-path"
+      class="mobile-path"
+      d="M 50 20 V 580"
+      fill="none"
+      stroke="#6b5e51"
+      stroke-width="2.5"
+    />
+    <g class="mobile-path">
+      <circle cx="50" cy="50" r="8" fill="#f4f1ec" stroke="#6b5e51" stroke-width="2.5"/>
+      <circle cx="50" cy="150" r="8" fill="#f4f1ec" stroke="#6b5e51" stroke-width="2.5"/>
+      <circle cx="50" cy="250" r="8" fill="#f4f1ec" stroke="#6b5e51" stroke-width="2.5"/>
+      <circle cx="50" cy="350" r="8" fill="#f4f1ec" stroke="#6b5e51" stroke-width="2.5"/>
+      <circle cx="50" cy="450" r="9" fill="#f4f1ec" stroke="#6b5e51" stroke-width="2.5"/>
+    </g>
+  </svg>
 
-          <div class="step step-1">01 - LISTEN</div>
-          <div class="step step-2">02 - CONCEPT</div>
-          <div class="step step-3">03 - CURATION</div>
-          <div class="step step-4">04 - EXECUTION</div>
-          <div class="step step-5">05 - DELIVERY</div>
-        </div>
-      </section>
+  <div class="step step-1">01 - LISTEN</div>
+  <div class="step step-2">02 - CONCEPT</div>
+  <div class="step step-3">03 - CURATION</div>
+  <div class="step step-4">04 - EXECUTION</div>
+  <div class="step step-5">05 - DELIVERY</div>
+</div>
+
       <div class="process-steps">
         <div class="process-card">
           <h3>01 - LISTEN</h3>
@@ -338,6 +271,9 @@
         </div>
       </div>
     </main>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="script.js"></script>
+    
   </body>
 </html>
