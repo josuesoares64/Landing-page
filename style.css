@@ -1,9 +1,15 @@
+@font-face {
+  font-family: 'Oriental Village';
+  src: url('fonts/OrientalVillage.ttf') format('truetype');
+}
 /* Global Styles */
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   background-color: rgba(246, 245, 236, 1);
+  scroll-behavior: smooth;
 }
 
 * {
@@ -98,7 +104,6 @@ header nav a:hover {
     align-items: center;
     padding-top: 40px;
     gap: 30px;
-    background-color: white;
     transform: translateX(-100%);
     transition: transform 0.3s ease-in-out;
   }
@@ -123,7 +128,6 @@ header nav a:hover {
     transform: scale(0.8);
     transform-origin: center;
   }
-
 }
 
 /* Section-start Styles */
@@ -145,6 +149,15 @@ header nav a:hover {
   max-width: 160px;
   width: 100%;
   height: auto;
+}
+
+.start-text {
+    /* Coloca o texto na parte de baixo, alinhado ao centro */
+    color: rgba(255, 255, 255, 1); /* Cor do texto para ser visível no vídeo */
+    font-size: 1.2em; /* Tamanho do texto para dar destaque */
+    margin-top: auto; /* Empurra o elemento para a parte de baixo */
+    margin-bottom: 20px; /* Adiciona um espaço da borda inferior */
+    z-index: 2; /* Fica acima do vídeo */
 }
 
 .scroll-prompt {
@@ -178,22 +191,19 @@ header nav a:hover {
   height: 40vh;
   text-align: center;
   padding: 10px;
+  margin-bottom: 80px;
 }
 
 h1 {
-  font-family: "Oriental Village", cursive;
-  font-weight: 400;
-  font-size: 158.86px;
-  line-height: 1;
-  margin: 0;
+  font-size: 2rem;
 }
 
 .subheading {
-  font-size: 1.2rem;
+  padding: 20px;
+  text-align: center;
   font-family: "My Soul", cursive;
-  line-height: 1.6;
   margin-top: 20px;
-  max-width: 600px;
+  width: 100vw;
 }
 
 .header-container h1 {
@@ -210,8 +220,41 @@ h1 {
   line-height: 1.5;
 }
 
+#inicio {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ocupa a altura total da tela */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza a logo na vertical */
+    align-items: center; /* Centraliza a logo na horizontal */
+}
+
+/* Vídeo em tela cheia */
+.video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    object-fit: cover; /* cobre toda a área sem distorcer */
+}
+
+/* Logo centralizada sobre o vídeo */
+.logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 250px; /* controla o tamanho */
+    width: 100%;
+    z-index: 2;
+}
+
 .main-content-container {
   display: flex;
+  padding: 20px;
   justify-content: space-between;
   align-items: flex-start;
   position: relative;
@@ -223,17 +266,23 @@ h1 {
   max-width: 350px;
 }
 
+@media (max-width: 425px) {
+  .text-container {
+    margin-left: 10px;
+  }
+}
+
 .text-container h3 {
   font-size: 1.5rem;
   font-weight: bold;
   letter-spacing: 0.1em;
-  color: #333;
+  color: rgba(87, 58, 27, 0.87);
 }
 
 .text-container .description {
   line-height: 1.6;
   margin-top: 1rem;
-  color: #666;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 .image-gallery {
@@ -287,8 +336,148 @@ h1 {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+@media (max-width: 767px) {
+  .main-content-container h3 {
+    margin-top: 49px;
+    font-size: 0.9rem;
+  }
+
+  .main-content-container p {
+    font-size: 0.7rem;
+    width: 90%;
+  }
+
+  .text-container {
+    margin-top: 50px;
+  }
+
+  .image-gallery .img-1 {
+    top: 35px;
+    left: -70%;
+    width: 60px;
+    height: 70px;
+  }
+
+  .image-gallery .img-2 {
+    left: 40%;
+    width: 70px;
+  }
+
+  .image-gallery .img-3 {
+    top: 25%;
+    width: 70px;
+    height: 80px;
+  }
+
+  .image-gallery .img-4 {
+    left: -130px;
+    top: 48%;
+    height: 80px;
+    width: 100px;
+  }
+
+  .image-gallery .img-5 {
+    left: -240px;
+    top: 37%;
+    width: 70px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .image-gallery .img-1 {
+    top: 80px;
+    left: -10px;
+    width: 80px;
+    height: 90px;
+  }
+
+  .image-gallery .img-2 {
+    width: 120px;
+  }
+
+  .image-gallery .img-3 {
+    top: 250px;
+    right: 10px;
+    height: 230px;
+    width: 150px;
+  }
+
+  .image-gallery .img-4 {
+    top: 350px;
+    left: -150px;
+    height: 100px;
+    width: 120px;
+  }
+
+  .image-gallery .img-5 {
+    top: 330px;
+    left: -350px;
+    width: 120px;
+  }
+
+  .text-container {
+    margin-top: 170px;
+    margin-left: 90px;
+  }
+
+  section .selected-works {
+    padding: 10px 10px;
+  }
+}
+
+/* Estilos para o contêiner principal */
+@media (max-width: 600px) {
+ .quadros-container {
+   padding: 10px; /* Reduz o padding em telas menores */
+   gap: 10px; /* Reduz o espaço entre os quadros em telas menores */
+ }
+
+ .quadro {
+   width: 200px; /* Largura menor dos quadros em celulares */
+   border-width: 8px; /* Bordas um pouco menores em celulares */
+ }
+
+ .quadro p {
+   font-size: 12px; /* Texto menor em celulares */
+ }
+}
+.quadros-container {
+ display: flex;
+ flex-direction: row;
+ flex-wrap: nowrap;
+ overflow-x: auto;
+ -webkit-overflow-scrolling: touch;
+ gap: 20px;
+ padding: 20px; /* Aumentei o padding para dar espaço para as bordas e um respiro visual nas laterais */
+}
+
+/* Estilos para cada quadro */
+.quadro {
+ flex: 0 0 auto;
+ width: 281px; /* Largura do conteúdo interno do quadro */
+ height: auto; /* Altura automática para se ajustar ao conteúdo */
+ box-sizing: border-box; /* Inclui a borda no cálculo da largura e altura */
+ text-align: center; /* Centraliza o texto abaixo da imagem */
+}
+
+/* Estilos para as imagens dentro dos quadros */
+.quadro img {
+  border: 10px solid rgba(256, 255, 256, 1);
+  box-shadow: 0 0 25px rgba(101, 10, 100, 0.11);
+ display: block; /* Remove o espaço extra abaixo da imagem */
+ width: 100%; /* Faz a imagem ocupar toda a largura do conteúdo do quadro */
+ height: auto; /* Mantém a proporção da imagem */
+ object-fit: cover; /* Garante que a imagem cubra a área sem distorcer (pode ser 'contain' se preferir ver a imagem inteira) */
+}
+
+/* Estilos para o texto abaixo da imagem */
+.quadro p {
+ margin-top: 10px; /* Espaço entre a imagem e o texto */
+ font-size: 14px; /* Tamanho da fonte (ajuste conforme necessário) */
+ color: #333; /* Cor do texto (ajuste conforme necessário) */
+}
 /* Presentation-section Media Queries */
-@media (max-width: 768px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   h1 {
     font-size: 80px;
   }
@@ -298,63 +487,107 @@ h1 {
   }
 }
 
-/* Pillars Styles */
 .pillars {
-  padding: 4rem;
-  height: 464px;
+  padding: 20px;
+  font-size: 0.7rem;
 }
 
-.pillar-img {
-  text-align: center;
-  height: 157px;
-  width: 488px auto;
-  margin-bottom: 25px;
+.pillar img {
+  width: 100px;
 }
 
-.pillar {
-  height: 145px;
-  margin: -2px;
-}
-
-.pillars-text {
+.pillar-1 {
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  text-align: left;
-  margin-top: -10px;
-  gap: 45px;
-  font-size: 1.1rem;
-}
-
-.pillars-text h3 {
-  color: rgba(87, 58, 27, 0.87);
-}
-
-.pillar-h3 {
-  font-size: 1.2rem;
-  margin-top: -200px;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  padding: 10px;
+  text-align: end;
+  width: 100%;
+  gap: 15px;
+  margin: 10px;
+  & h3 {
+    margin-bottom: 10px;
+  }
+  & img {
+    width: 120px;
+    height: 160px;
+  }
 }
 
 .pillar-text {
+  width: 150px;
   display: flex;
+  bottom: 0;
+  gap: 10px;
+  font-size: 0.8rem;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: left;
-  padding: 5px;
-  width: 350px;
-  gap: 40px;
+  margin-top: 70px;
 }
+
+.pillar-2 {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: end;
+  padding: 10px;
+  text-align: end;
+  width: 100%;
+  gap: 15px;
+  margin: 10px;
+  & img {
+    width: 100px;
+  }
+}
+
+.pillar-3 {
+  display: flex;
+  gap: 10px;
+  margin: 10px;
+  & img {
+    width: 100px;
+    height: 140px;
+  }
+}
+
+.pillar-4 {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: end;
+  padding: 10px;
+  text-align: end;
+  width: 100%;
+  gap: 15px;
+  margin: 10px;
+  & img {
+    width: 100px;
+  }
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  height: 30px;
+  margin-bottom: 90px;
+  color: rgba(87, 58, 27, 1);
+}
+
+.title h2 {
+  font-size: 3rem;
+  font-family: 'Oriental Village', sans-serif;
+}
+
+.text-container {
+    margin-top: 50px;
+    
+  }
 
 /* Selected-works Styles */
 .selected-works {
-  background-color: #f9f5ed;
   padding: 70px 60px;
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
 .selected-works .section-header h2 {
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
   font-size: 2.8rem;
   font-weight: 400;
   text-align: center;
@@ -372,7 +605,7 @@ h1 {
 
 .categories {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
 }
 
@@ -394,7 +627,7 @@ h1 {
   font-size: 0.7rem;
   margin-top: 35px;
   line-height: 1.5;
-  color: #6e5847;
+  color: rgba(168, 167, 162, 1);
   margin-bottom: 15px;
 }
 
@@ -404,9 +637,120 @@ h1 {
   height: 300px;
 }
 
+.process-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.process-card {
+  border-radius: 8px;
+  text-align: left;
+}
+
+.process-card p {
+  color: rgba(168, 167, 162, 1);
+}
+
+.process-card h3 {
+  font-size: 0.9rem;
+  color: rgba(87, 58, 27, 0.87);
+  margin-bottom: 10px;
+}
+
+.process-step__content p {
+  font-size: 0.4rem;
+  line-height: 1.6;
+}
+
+/*
+  Media Query para Celulares Grandes e Tablets (a partir de 425px)
+  Este é o breakpoint para o layout de 3 e 2 cards.
+*/
+@media (max-width: 425px) {
+  .logo {
+    width: 100px;
+  }
+  .process-steps {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza os cards */
+    gap: 20px;
+  }
+
+  .process-card {
+    width: calc(33.333% - 20px); /* Garante que 3 cards caibam na linha */
+  }
+
+  /* Ajusta os últimos dois cards para ocuparem a segunda linha */
+  .process-card:nth-child(4),
+  .process-card:nth-child(5) {
+    width: calc(50% - 20px); /* Cada um ocupa metade da linha */
+  }
+}
+
+/*
+  Media Query para Tablet (a partir de 768px)
+  Muda o layout para 3 cards na primeira linha e 2 na segunda.
+*/
+@media (min-width: 768px) {
+  .process-steps {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza os cards */
+  }
+
+  .process-card {
+    width: calc(33.333% - 20px); /* Garante que 3 cards caibam na linha */
+    margin: 3px;
+  }
+
+  .process-step__content p {
+    font-size: 1rem;
+  }
+
+  /* Ajusta os últimos dois cards para ocuparem a segunda linha */
+  .process-card:nth-child(4),
+  .process-card:nth-child(5) {
+    width: calc(50% - 20px); /* Cada um ocupa metade da linha */
+  }
+}
+/* inicio */
+@media (min-width: 1024px) {
+  .process-steps {
+    flex-wrap: nowrap; /* Impede que os cards quebrem para a próxima linha */
+    gap: 20px;
+    padding: 40px;
+  }
+
+  .process-card {
+    width: calc(33.333% - 20px); /* Garante que 3 cards caibam na linha */
+  }
+}
+
 /* Process-container Styles */
 .process-container {
-  padding: 40px;
+  padding: 11ppx;
+}
+
+.process-title {
+  font-family: "Great Vibes", cursive;
+  font-size: 2.8rem;
+  font-weight: normal;
+  margin-bottom: 0;
+}
+
+.process-subtitle {
+  letter-spacing: 0.15em;
+  font-size: 0.8rem;
+  margin-top: 0;
+  margin-bottom: 4rem;
+}
+
+/* Estilos Gerais para a Seção */
+.process-container {
+  padding: 20px 20px;
+  text-align: center;
 }
 
 .process-title {
@@ -425,102 +769,75 @@ h1 {
 
 .process-graphic {
   position: relative;
-  height: auto;
-  min-height: 550px;
+  /* Adicione uma altura fixa para garantir que o contêiner não colapse */
+  height: 700px; /* Valor inicial para mobile */
 }
 
+/* Estilos para o SVG */
 .process-path-svg {
   position: absolute;
-  left: 40%;
-  transform: translateX(10%);
-  width: 20px;
-  height: 10%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%; /* Ajuste a largura do SVG */
+  height: 100%;
 }
 
+/* Por padrão, esconde a linha de desktop e mostra a de mobile */
 .desktop-path {
   display: none;
 }
-
 .mobile-path {
   display: block;
 }
 
-.step {
-  position: absolute;
-  width: 80%;
-  left: 50%;
-  font-size: 0.85rem;
-  transform: translate(-50%, -50%);
-}
+/* Estilos para os passos (mobile) */
 
 .step-1 {
   top: 50px;
 }
-
 .step-2 {
   top: 150px;
 }
-
 .step-3 {
   top: 250px;
 }
-
 .step-4 {
   top: 350px;
 }
-
 .step-5 {
   top: 450px;
 }
 
-.process-steps {
-  width: 100%;
-  padding: 50px;
-  display: flex;
-  flex-direction: row;
-  gap: 50px;
-  text-align: left;
-}
+/* -------------------------------------- */
+/* Media Queries para Telas Maiores */
+/* -------------------------------------- */
 
-.process-card {
-  width: 197px;
-  height: 148px;
-  margin-top: 20px;
-  margin-left: 30px;
-}
-
-/* Process-container Media Queries */
+/* Desktop: a partir de 768px */
 @media (min-width: 768px) {
-  .process-title {
-    font-size: 3.5rem;
-  }
-  
-  .process-subtitle {
-    font-size: 0.9rem;
-    letter-spacing: 0.2em;
+  .process-graphic {
+    height: 400px; /* Altura ajustada para o layout de desktop */
   }
 
-  .process-graphic {
-    height: 400px;
-    min-height: auto;
+  /* Exibe a linha de desktop e esconde a de mobile */
+  .desktop-path {
+    display: block;
+  }
+  .mobile-path {
+    display: none;
   }
 
   .process-path-svg {
+    position: relative;
     left: 0;
     transform: none;
     width: 100%;
     height: 100%;
   }
 
-  .mobile-path {
-    display: none;
-  }
-  
-  .desktop-path {
-    display: block;
-  }
-
+  /* Reposiciona os textos */
   .step {
+    position: absolute;
     width: auto;
     font-size: 1.3rem;
     transform: none;
@@ -530,170 +847,538 @@ h1 {
     top: 45px;
     left: 105px;
     transform: translateX(-100%);
+    text-align: right;
   }
-  
   .step-2 {
     top: 78px;
     left: auto;
     right: 130px;
     transform: translateX(100%);
+    text-align: left;
   }
-  
   .step-3 {
     top: 155px;
     left: 95px;
     transform: translateX(-100%);
+    text-align: right;
   }
-  
   .step-4 {
     top: 230px;
     left: auto;
     right: 130px;
     transform: translateX(100%);
+    text-align: left;
   }
-  
   .step-5 {
     top: 270px;
     left: 110px;
     transform: translateX(-100%);
+    text-align: right;
   }
 
+  /* Posicionamento dos círculos do SVG */
   .desktop-path circle:nth-of-type(1) {
-    transform: translate( 63px, 30px);
+    transform: translate(63px, 30px);
   }
   .desktop-path circle:nth-of-type(2) {
     transform: translate(-54px, 20px);
   }
   .desktop-path circle:nth-of-type(3) {
-    transform: translate( 68px, 5px);
+    transform: translate(68px, 5px);
   }
   .desktop-path circle:nth-of-type(4) {
-    transform: translate( -55px, -10px);
+    transform: translate(-55px, -10px);
   }
   .desktop-path circle:nth-of-type(5) {
-    transform: translate( 55px, -15px);
+    transform: translate(55px, -15px);
   }
 }
 
-@media (min-width: 769px) {
-  .process-container {
-    padding: 0 60px;
+@media (min-width: 1024px) {
+  .process-graphic .step {
+    font-size: 1rem;
+  }
+  .process-graphic .step-1 {
+    top: 11%;
+    left: -1%;
+  }
+  .process-graphic .step-2 {
+    top: 21%;
+    right: 4%;
+  }
+  .process-graphic .step-3 {
+    top: 39%;
+    left: -4%;
+  }
+  .process-graphic .step-4 {
+    top: 58%;
+    right: 3%;
+  }
+  .process-graphic .step-5 {
+    top: 66%;
+    left: -2%;
+  }
+
+  .process-graphic .desktop-path circle:nth-of-type(1) {
+    transform: translate(-1px, 2px);
+  }
+  .process-graphic .desktop-path circle:nth-of-type(2) {
+    transform: translate(2px, 1px);
+  }
+  .process-graphic .desktop-path circle:nth-of-type(3) {
+    transform: translate(1px, 2px);
+  }
+  .process-graphic .desktop-path circle:nth-of-type(4) {
+    transform: translate(-1px, 0px);
+  }
+  .process-graphic .desktop-path circle:nth-of-type(5) {
+    transform: translate(-5px, -1px);
   }
 }
 
-@media (max-width: 1024px) {
-  .process-steps {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  .process-step__content {
-    margin-left: 20px;
-  }
-
-  .process-card h3 {
-    margin-left: 20px;
-  }
-
-  .step-1 {
-    top: 80px;
-    left: 95px;
-    transform: translateX(-100%);
-  }
-
-  .step-2 {
-    top: 110px;
-    left: auto;
-    right: 149px;
-    transform: translateX(100%);
-  }
-  
-  .step-3 {
-    top: 160px;
-    left: 97px;
-    transform: translateX(-100%);
-  }
-  
-  .step-4 {
-    top: 210px;
-    left: auto;
-    right: 149px;
-    transform: translateX(100%);
-  }
-
-  .step-5 {
-    top: 240px;
-    left: 110px;
-    transform: translateX(-100%);
-  }
-
-  .process-card {
-    width: 100%;
-    height: auto;
-  }
-
-  .process-card:nth-child(1) {
-    grid-column: 1;
-    grid-row: 1;
-  }
-  
-  .process-card:nth-child(2) {
-    grid-column: 2;
-    grid-row: 1;
-  }
-  
-  .process-card:nth-child(3) {
-    grid-column: 3;
-    grid-row: 1;
-  }
-
-  .process-card:nth-child(4) {
-    grid-column: 2;
-    grid-row: 2;
-    transform: translateX(-50%);
-  }
-  
-  .process-card:nth-child(5) {
-    grid-column: 2;
-    grid-row: 2;
-    transform: translateX(50%);
-  }
-}
-
+/* Desktop Extra Grande: a partir de 1440px */
 @media (min-width: 1440px) {
   .step-1 {
     left: 300px;
+    top: 40px;
   }
-  
   .step-2 {
     right: 360px;
+    top: 76px;
   }
-  
   .step-3 {
     left: 300px;
+    top: 155px;
   }
-  
   .step-4 {
     right: 360px;
+    top: 220px;
   }
-  
   .step-5 {
     left: 300px;
+    top: 265px;
+  }
+
+  /* Posicionamento dos círculos do SVG */
+  .desktop-path circle:nth-of-type(1) {
+    transform: translate(-1px, 0px);
+  }
+  .desktop-path circle:nth-of-type(2) {
+    transform: translate(2px, -1px);
+  }
+  .desktop-path circle:nth-of-type(3) {
+    transform: translate(1px, 1px);
+  }
+  .desktop-path circle:nth-of-type(4) {
+    transform: translate(2px, -10px);
+  }
+  .desktop-path circle:nth-of-type(5) {
+    transform: translate(-8px, 0px);
+  }
+
+  .image-gallery .img-3 {
+  bottom: 25%;
+  right: 28%;
+  height: 200px;
+  width: 980px;
+}
+
+}
+
+/* Estilos Gerais para a Seção */
+.process-container {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.process-title {
+  font-family: "Great Vibes", cursive;
+  font-size: 2.8rem;
+  font-weight: normal;
+  margin-bottom: 0;
+}
+
+.process-subtitle {
+  letter-spacing: 0.15em;
+  font-size: 0.8rem;
+  margin-top: 0;
+  margin-bottom: 4rem;
+}
+
+.process-graphic {
+  position: relative;
+  height: auto; /* A altura se ajustará ao conteúdo */
+  min-height: 400px; /* Altura mínima para o layout de desktop */
+}
+
+/* Estilos para o SVG - Força a exibição do desktop */
+.process-path-svg {
+  position: relative; /* Permite que o SVG seja responsivo */
+  width: 100%;
+  height: auto; /* A altura se ajusta proporcionalmente */
+}
+
+.desktop-path {
+  display: block !important; /* Garante que a linha de desktop seja sempre visível */
+}
+
+.mobile-path {
+  display: none !important; /* Garante que a linha mobile nunca seja exibida */
+}
+
+/* Estilos para os passos (posicionamento para desktop) */
+.step {
+  position: absolute;
+  width: auto;
+  font-size: 1em; /* Tamanho de fonte base */
+  transform: none;
+}
+
+.step-1 {
+  top: 8%;
+  left: -1%;
+  text-align: right;
+}
+.step-2 {
+  top: 12%;
+  right: 3%;
+  text-align: left;
+}
+.step-3 {
+  top: 19%;
+  left: -5%;
+  text-align: right;
+}
+.step-4 {
+  top: 26.5%;
+  right: 0%;
+  text-align: left;
+}
+.step-5 {
+  top: 30%;
+  left: -4%;
+  text-align: right;
+}
+
+/* Posicionamento dos círculos do SVG */
+.desktop-path circle {
+  transition: transform 0.3s ease;
+}
+.desktop-path circle:nth-of-type(1) {
+  transform: translate(63px, 30px);
+}
+.desktop-path circle:nth-of-type(2) {
+  transform: translate(-54px, 20px);
+}
+.desktop-path circle:nth-of-type(3) {
+  transform: translate(68px, 5px);
+}
+.desktop-path circle:nth-of-type(4) {
+  transform: translate(-55px, -10px);
+}
+.desktop-path circle:nth-of-type(5) {
+  transform: translate(55px, -15px);
+}
+
+/*
+  Media Queries para Ajustes Finos em Telas Menores
+  Aqui você pode ajustar o tamanho da fonte e o posicionamento se o texto começar a sobrepor.
+*/
+@media (min-width: 768px) {
+  .step {
+    font-size: 0.8em; /* Reduz o tamanho da fonte em telas menores */
+  }
+  /* Você pode adicionar ajustes de posicionamento específicos aqui se necessário */
+  .step-1 {
+    left: 6%;
+    top: 16%;
+  }
+  .step-2 {
+    right: 10%;
+    top: 23%;
+  }
+  .step-3 {
+    left: 2%;
+    top: 37%;
+  }
+  .step-4 {
+    right: 8%;
+    top: 51%;
+  }
+  .step-5 {
+    left: 3%;
+    top: 57%;
   }
 }
 
-@media (max-width: 600px) {
-  .process-steps {
-    grid-template-columns: 1fr;
+@media (max-width: 480px) {
+  .step {
+    font-size: 0.7em;
   }
-  
-  .process-card {
-    grid-column: 1 !important;
-    grid-row: auto !important;
-    transform: none !important;
+}
+/* Esconde todos os passos por padrão, mostrando apenas o ativo */
+.form-step {
+  display: none;
+  padding: 0 30px;
+  margin: 20px 0;
+  animation: fadein 0.5s;
+  color: rgba(125, 102, 77, 1);
+  text-align: left;
+}
+
+.form-step.active {
+  display: block;
+}
+
+.title-form {
+  margin-top: 70px;
+  color: rgba(87, 58, 27, 0.87);
+}
+
+/* Estilos para o marcador de passo (N° 1 ...) */
+.step-label {
+  font-size: 0.9em;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  color: rgba(83, 57, 25, 1);
+}
+
+.step-label .dots {
+  font-size: 1.5em;
+  line-height: 0;
+}
+
+/* Estilos para a pergunta */
+.question {
+  font-size: 1.7em; /* Tamanho ajustado para maior destaque */
+  font-weight: 500;
+  margin: 0;
+  border-bottom: 1px solid #6b5e51;
+  padding-bottom: 20px;
+}
+
+/* Estilos para o grupo de input (input + placeholder) */
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-group input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #6b5e51;
+  background: transparent;
+  font-size: 1.2em;
+  color: #6b5e51;
+  padding: 10px 0 5px 0;
+  box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-bottom-color: #3b332d;
+}
+
+.input-group input:focus + .input-placeholder {
+  opacity: 0;
+}
+
+.input-placeholder {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 0.8em;
+  color: #a49c91;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Estilos para a navegação (botões de seta) */
+.navigation-buttons {
+  display: flex;
+  width: 30px;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.navigation-buttons .nav-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Estilização para o SVG da seta */
+.navigation-buttons .arrow {
+  width: 30px; /* Torna a seta maior */
+  height: 30px;
+  stroke: #6b5e51; /* Aplica a cor do tema */
+  transition: stroke 0.3s ease;
+}
+
+.navigation-buttons .nav-button:hover .arrow {
+  stroke: #3b332d; /* Cor mais escura no hover */
+}
+
+.navigation-buttons .nav-button:disabled .arrow {
+  stroke: #c2c0bb; /* Cor mais clara para o estado desabilitado */
+  cursor: not-allowed;
+}
+
+/* Alinha o botão "Voltar" à esquerda */
+.navigation-buttons .nav-button.prev {
+  margin-right: auto;
+}
+
+/* Animação para a transição dos passos */
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media Query para telas menores */
+@media (max-width: 768px) {
+  .question {
+    font-size: 1.5em;
+  }
+}
+
+.main-footer {
+  font-family: "Roboto Mono", monospace; /* Fonte similar à da imagem */
+  color: #6b5e51;
+  padding: 40px;
+  text-align: center;
+  width: 100%;
+}
+
+/* Estilos para a parte superior do footer (links) */
+.footer-top {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap; /* Permite que os itens quebrem a linha em telas pequenas */
+}
+
+.footer-nav {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: #6b5e51;
+  font-size: 0.6em;
+  letter-spacing: 2px;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #3b332d;
+}
+
+.footer-icon {
+  display: flex;
+  align-items: center;
+}
+
+.footer-icon svg {
+  width: 40px;
+  height: 20px;
+  stroke: #6b5e51;
+}
+
+/* Estilos para a parte inferior do footer (texto) */
+.footer-bottom {
+  border-top: 1px solid #dcdcdc;
+  padding-top: 20px;
+}
+
+.footer-text {
+  font-size: 0.7em;
+  line-height: 1.6;
+  margin: 0;
+  color: #a49c91;
+}
+
+/* Media Queries para ajuste em telas menores */
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+  }
+  .footer-nav {
+    flex-direction: row;
+    gap: 10px;
+  }
+}
+
+body.dark-mode {
+  background-color: #212121; /* Um fundo escuro */
+  color: rgba(83, 57, 25, 1); /* Uma cor de texto clara */
+}
+
+/* Altere a cor dos links e textos para o tema escuro */
+body.dark-mode .footer-link {
+  font-size: 1.2rem;
+}
+
+.main-privacy {
+  padding: 50px;
+}
+
+.main-start {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  margin-top: 7rem;
+  gap: 2rem;
+  width: 100vw;
+  height: 45vh;
+  text-align: center;
+
+  & h1 {
+    font-size: 2rem;
+  }
+  & p {
+    width: 40rem;
+  }
+}
+
+.main-start p {
+ width: 80px auto;
+}
+
+.terms {
+  padding: 2rem;
+  & h2 {
+    margin: 1rem 0;
+    font-size: 1.4rem;
+  } 
+  & p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-start {
+    height: 35vh;
+    & p {
+      width: 80vw;
+    }
+  }
+  .main-privacy {
+    padding: 0;
   }
 }
